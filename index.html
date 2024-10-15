@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Todo app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+
+      :root {
+        --background--: #181824;
+        --li--background: #fff;
+        --li--text: #000;
+        --background--img: url("./images/bg-desktop-dark.jpg");
+        --icon--background: #000;
+        --sun--: url("./images/icon-sun.svg");
+      }
+      .light {
+        --background--: #e4e4e4;
+        --li--background: #fff;
+        --li--text: #000;
+        --background--img: url("./images/bg-desktop-light.jpg");
+        --icon--background: #000;
+        --sun--: url("./images/icon-moon.svg");
+      }
+      body {
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+      h1.todo {
+        color: #fff;
+        letter-spacing: 15px;
+      }
+      .main--container {
+        height: 100vh;
+        background-color: var(--background--);
+        width: 100%;
+        position: relative;
+      }
+      .background--img {
+        position: absolute;
+        top: 0;
+        background-size: cover;
+        background-image: var(--background--img);
+        width: 100%;
+        height: 250px;
+      }
+      .page--width {
+        margin-top: 100px;
+        min-width: 500px;
+        z-index: 21;
+      }
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .sub--main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .create--main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 50px;
+        width: 100%;
+        background-color: #fff;
+        border: none;
+        border-radius: 30px;
+        padding-left: 20px;
+      }
+      .create--inp {
+        flex: 1;
+        background: transparent;
+        border: none;
+        padding: 15px;
+        outline: none;
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+      .add--btn {
+        padding: 15px 40px;
+        border-radius: 30px;
+        background-color: #ff653b;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+      .store--todo li {
+        list-style-type: none;
+        padding: 20px 0px 20px 50px;
+        background-color: var(--li--background);
+        color: var(--li--text);
+        margin-top: 10px;
+        border-radius: 10px;
+      }
+      .store--todo {
+        margin-top: 50px;
+        border-radius: 10px;
+      }
+      .store--todo--main ul li {
+        position: relative;
+        cursor: pointer;
+      }
+      .store--todo--main ul li::after {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border: 1px solid var(--icon--background);
+        border-radius: 50%;
+        left: 10px;
+        bottom: 16px;
+      }
+      ul li.checked {
+        color: #555;
+        text-decoration: line-through;
+      }
+      ul li.checked::before {
+        content: "";
+        background-image: url(./images/icon-check.svg);
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        left: 14px;
+        fill: #fff;
+      }
+      ul li span {
+        position: absolute;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      #icon {
+        background-image: var(--sun--);
+        width: 30px;
+        height: 30px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main--container">
+      <div class="background--img"></div>
+      <div class="sub--main">
+        <div class="page--width">
+          <div class="header">
+            <h1 class="todo">TODO</h1>
+            <div id="icon"></div>
+          </div>
+          <div class="create--main">
+            <input type="text" id="create--todo" class="create--inp" />
+            <button class="add--btn" onclick="addTodo()">Add</button>
+          </div>
+          <div class="store--todo--main">
+            <ul class="store--todo"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Todo -->
+
+    <!-- Add dynamic number items left -->
+
+    <!-- All
+  Active 
+  Completed
+
+  Clear Completed
+
+  Drag and drop to reorder list -->
+
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+
+    <script src="./script.js"></script>
+  </body>
+</html>
